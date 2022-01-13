@@ -24,7 +24,7 @@ export default function CarForm(){
         <form onSubmit={handleSubmit}>
             <div className="mb-3">
                 <label className="form-label">Brand</label>
-                <input className="make" type="text" class="form-control"/>
+                <input name="make" type="text" className="form-control"/>
             </div>
 
             <div className="mb-3">
