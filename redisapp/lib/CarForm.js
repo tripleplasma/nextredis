@@ -20,30 +20,30 @@ export default function CarForm(){
     }
 
     return (
-        <div class="col-3">
+        <div className="col-3">
         <form onSubmit={handleSubmit}>
-            <div class="mb-3">
-                <label class="form-label">Brand</label>
-                <input name="make" type="text" class="form-control"/>
+            <div className="mb-3">
+                <label className="form-label">Brand</label>
+                <input className="make" type="text" class="form-control"/>
             </div>
 
-            <div class="mb-3">
-                <label class="form-label">Model</label>
-                <input name="model" type="text" class="form-control"/>
+            <div className="mb-3">
+                <label className="form-label">Model</label>
+                <input name="model" type="text" className="form-control"/>
             </div>
             
-            <div class="mb-3">
-                <label class="form-label">Image</label>
-                <input name="image" type="text" class="form-control"/>
+            <div className="mb-3">
+                <label className="form-label">Image</label>
+                <input name="image" type="text" className="form-control"/>
             </div>
 
-            <div class="mb-3">
-                <label class="form-label">Description</label>
-                <textarea name="description" type="text" class="form-control"/>
+            <div className="mb-3">
+                <label className="form-label">Description</label>
+                <textarea name="description" type="text" className="form-control"/>
             </div>
             
 
-            <button type="submit" class="btn btn-primary">Create Car</button>
+            <button type="submit" className="btn btn-primary">Create Car</button>
         </form>
         </div>
     );
