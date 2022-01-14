@@ -39,14 +39,10 @@ export async function createIndex(){
     await repo.createIndex();
 }
 
-export async function searchCars(q){
+export async function searchCars(){
     await connect();
 
     const repo = new Repository(schema,client);
-    const cars = await repo.search()
-        .where('make').eq(q)
-        .or('model').eq(q)
-        .or('description').matches(q)
-        .return.all();
+    const cars = await repo.search().return.all();
     return cars;
 }
