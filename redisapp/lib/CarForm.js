@@ -30,10 +30,10 @@ export default function CarForm(){
         getCars();
         return result;
     }
-
+//FORM VALIDATION
     return (
-        <div>
-            <div className="col-3">
+        <div className="row">
+            <div className="col-3 col">
                 <form onSubmit={handleSubmit}>
                     <div className="mb-3">
                         <label className="form-label">Brand</label>
@@ -55,18 +55,28 @@ export default function CarForm(){
                         <textarea name="description" type="text" className="form-control"/>
                     </div>
                     
-                    <button type="submit" className="btn btn-primary">Create Car</button>
+                    <div className="row">
+                        <button type="submit" className="btn btn-primary col">Create Car</button>
+                        <button className="btn btn-secondary col" onClick={getCars}>Show All Cars</button>
+                    </div>
                 </form>
             </div>
-            <div className="col-3">
-                <button className="btn btn-secondary" onClick={getCars}>Show All Cars</button>
-                <ul>
+            <div className="col-6 col">
+                
+                <table className="table .table-bordered">
+                    <tr>
+                        <th>Brand</th>
+                        <th>Model</th>
+                        <th>Description</th>
+                    </tr>
                     {hits.map((hit) => (
-                        <li key={hit.entityId}>
-                            {hit.make} {hit.model} {hit.description}
-                        </li>
+                        <tr key={hit.entityId}>
+                            <td>{hit.make}</td>
+                            <td>{hit.model}</td>
+                            <td>{hit.description}</td>
+                        </tr>
                     ))}
-                </ul>
+                </table>
             </div>
         </div>
     );
